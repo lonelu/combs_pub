@@ -1354,7 +1354,6 @@ def make_pssm_w_burial_avg_over_resnums(output_dir, template_on_surface_dict, li
     all_obs_dict = defaultdict(dict)
     all_exp_dict = defaultdict(dict)
     terms = [f.split('.')[0] for f in os.listdir(frag_path) if (f[:3] != 'hit' and f[-3:] == 'pdb')]
-    #seq_dicts = dict()
     for term in terms:
         try:
             rns = get_resnums(frag_path + term + '.pdb')
@@ -1376,7 +1375,6 @@ def make_pssm_w_burial_avg_over_resnums(output_dir, template_on_surface_dict, li
         except:
             print('Exception: ', term)
             traceback.print_exc()
-            # break
 
     pssm = calc_obs_expect_scores_allresnums(all_obs_dict, all_exp_dict)
     pssm = pd.DataFrame(pssm)

@@ -283,11 +283,8 @@ class Cluster:
             cluster_size = len(mems)
             for mem in mems:
                 filename = str(self.pdbs_errorfree[mem]).split()[-1].split('_')
-                # self._ifg_count.append(int(filename[1]))
-                # self._vdm_count.append(int(filename[3]))
                 self._ifg_count.append(filename[1])
                 self._vdm_count.append(filename[3])
-                # self._query_name.append('_'.join(filename[4:]))
                 if self.query_names_errorfree:
                     query_name = self.query_names_errorfree[mem]
                 else:

@@ -1123,46 +1123,25 @@ def make_cst_df(path_to_cst_file):
 
 acceptor_atom_types = ['n', 'o', 'f']
 
-# path_to_sig_dict = defaultdict(dict)
-# path_to_sig_dict['SER'] = '/Volumes/bkup1/combs/database/representatives/hb_only/hydroxyl/20181009/'
-# path_to_sig_dict['THR'] = '/Volumes/bkup1/combs/database/representatives/hb_only/hydroxyl/20181009/'
-# path_to_sig_dict['TYR'] = '/Volumes/bkup1/combs/database/representatives/hb_only/hydroxyl/20181009/'
-# path_to_sig_dict['ASN'] = '/Volumes/bkup1/combs/database/representatives/hb_only/carboxamide/20181002/'
-# path_to_sig_dict['GLN'] = '/Volumes/bkup1/combs/database/representatives/hb_only/carboxamide/20181002/'
-# path_to_sig_dict['ASP'] = '/Volumes/bkup1/combs/database/representatives/hb_only/carboxylate/20181009/'
-# path_to_sig_dict['GLU'] = '/Volumes/bkup1/combs/database/representatives/hb_only/carboxylate/20181009/'
-# path_to_sig_dict['ARG'] = '/Volumes/bkup1/combs/database/representatives/hb_only/arginine/20181009/'
-# path_to_sig_dict['LYS'] = '/Volumes/bkup1/combs/database/representatives/hb_only/lysine/20181009/'
-# path_to_sig_dict['backboneNH'] = '/Volumes/bkup1/combs/database/representatives/hb_only/backboneNH/20181002/'
-# path_to_sig_dict['backboneCO'] = '/Volumes/bkup1/combs/database/representatives/hb_only/backboneCO/20181002/'
-# path_to_sig_dict['HIS'] = defaultdict(dict)
-# path_to_sig_dict['HIS']['ND1']['ACC'] = '/Volumes/bkup1/combs/database/representatives/hb_only/imidazoleacc/20181009/'
-# path_to_sig_dict['HIS']['NE2']['ACC'] = '/Volumes/bkup1/combs/database/representatives/hb_only/imidazoleacc/20181009/'
-# path_to_sig_dict['HIS']['ND1']['DON'] = '/Volumes/bkup1/combs/database/representatives/hb_only/imidazoledon/20181009/'
-# path_to_sig_dict['HIS']['NE2']['DON'] = '/Volumes/bkup1/combs/database/representatives/hb_only/imidazoledon/20181009/'
-# path_to_sig_dict['HIS']['HD1']['DON'] = '/Volumes/bkup1/combs/database/representatives/hb_only/imidazoledon/20181009/'
-# path_to_sig_dict['HIS']['HE2']['DON'] = '/Volumes/bkup1/combs/database/representatives/hb_only/imidazoledon/20181009/'
-
 path_to_sig_dict = defaultdict(dict)
-path_to_sig_dict['SER'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/hydroxyl/20181009/'
-path_to_sig_dict['THR'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/hydroxyl/20181009/'
-path_to_sig_dict['TYR'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/hydroxyl/20181009/'
-path_to_sig_dict['ASN'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/carboxamide/20181002/'
-path_to_sig_dict['GLN'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/carboxamide/20181002/'
-path_to_sig_dict['ASP'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/carboxylate/20181009/'
-path_to_sig_dict['GLU'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/carboxylate/20181009/'
-path_to_sig_dict['ARG'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/arginine/20181009/'
-path_to_sig_dict['LYS'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/lysine/20181009/'
-path_to_sig_dict['backboneNH'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/backboneNH/20181002/'
-path_to_sig_dict['backboneCO'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/backboneCO/20181002/'
+path_to_sig_dict['SER'] = '~/combs/database/representatives/hb_only/hydroxyl/20181009/'
+path_to_sig_dict['THR'] = '~/combs/database/representatives/hb_only/hydroxyl/20181009/'
+path_to_sig_dict['TYR'] = '~/combs/database/representatives/hb_only/hydroxyl/20181009/'
+path_to_sig_dict['ASN'] = '~/combs/database/representatives/hb_only/carboxamide/20181002/'
+path_to_sig_dict['GLN'] = '~/combs/database/representatives/hb_only/carboxamide/20181002/'
+path_to_sig_dict['ASP'] = '~/combs/database/representatives/hb_only/carboxylate/20181009/'
+path_to_sig_dict['GLU'] = '~/combs/database/representatives/hb_only/carboxylate/20181009/'
+path_to_sig_dict['ARG'] = '~/combs/database/representatives/hb_only/arginine/20181009/'
+path_to_sig_dict['LYS'] = '~/combs/database/representatives/hb_only/lysine/20181009/'
+path_to_sig_dict['backboneNH'] = '~/combs/database/representatives/hb_only/backboneNH/20181002/'
+path_to_sig_dict['backboneCO'] = '~/combs/database/representatives/hb_only/backboneCO/20181002/'
 path_to_sig_dict['HIS'] = defaultdict(dict)
-path_to_sig_dict['HIS']['ND1']['ACC'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/imidazoleacc/20181009/'
-path_to_sig_dict['HIS']['NE2']['ACC'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/imidazoleacc/20181009/'
-path_to_sig_dict['HIS']['ND1']['DON'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/imidazoledon/20181009/'
-path_to_sig_dict['HIS']['NE2']['DON'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/imidazoledon/20181009/'
-path_to_sig_dict['HIS']['HD1']['DON'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/imidazoledon/20181009/'
-path_to_sig_dict['HIS']['HE2']['DON'] = '/wynton/scratch/nick.polizzi/combs/database/representatives/hb_only/imidazoledon/20181009/'
-
+path_to_sig_dict['HIS']['ND1']['ACC'] = '~/combs/database/representatives/hb_only/imidazoleacc/20181009/'
+path_to_sig_dict['HIS']['NE2']['ACC'] = '~/combs/database/representatives/hb_only/imidazoleacc/20181009/'
+path_to_sig_dict['HIS']['ND1']['DON'] = '~/combs/database/representatives/hb_only/imidazoledon/20181009/'
+path_to_sig_dict['HIS']['NE2']['DON'] = '~/combs/database/representatives/hb_only/imidazoledon/20181009/'
+path_to_sig_dict['HIS']['HD1']['DON'] = '~/combs/database/representatives/hb_only/imidazoledon/20181009/'
+path_to_sig_dict['HIS']['HE2']['DON'] = '~/combs/database/representatives/hb_only/imidazoledon/20181009/'
 
 dict_corr_dict = defaultdict(dict)
 #hydroxyl

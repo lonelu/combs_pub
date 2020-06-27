@@ -144,7 +144,6 @@ def paste_bulge(path_to_loop, path_to_pdb, query_selection_N, query_selection_C,
                 phi = 0
             try:
                 psi = pr.calcPsi(res)
-                # print(psi)
                 if psi > -32 and (phi + psi_prev <= -125):
                     resnum = set(res.getResnums()).pop()
                     keep.append(resnum + 4)
@@ -160,9 +159,7 @@ def paste_bulge(path_to_loop, path_to_pdb, query_selection_N, query_selection_C,
         loop.setResnames('GLY')
     pdb = pr.parsePDB(path_to_pdb)
     query_N_bb = pdb.select(query_selection_N + ' and name N C CA')
-    # query_N_bb = query_N.select('name N C CA')
     query_C_bb = pdb.select(query_selection_C + ' and name N C CA')
-    # query_C_bb = query_C.select('name N C CA')
 
     first_resnum_loop = loop_bb.getResnums()[0]
     last_resnum_loop = loop_bb.getResnums()[-1]
@@ -249,7 +246,6 @@ def print_bulge_pdb(pdb_Ns, loop_slices, pdb_Cs, outdir):
             start = finish
             finish = start + num_ind
             loop.setBetas(list(range(start, finish)))
-            # loop.setResnames('GLY')
             pdbN_last_index = pdbN.getIndices()[-1]
             loop_last_resnum = loop.getResnums()[-1]
             pdbC_first_index = pdbC.getIndices()[0]

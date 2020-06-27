@@ -151,12 +151,8 @@ class Analyze:
                     break
 
         if 'query_name' in df.columns:
-            # filename_end = '.' + '.'.join(filename_end.split('.')[1:])
             for n, row in df[['iFG_count', 'vdM_count', 'query_name']].iterrows():
                 try:
-                    # yield pr.parsePDB(path + 'iFG_' + str(row['iFG_count'])
-                    #                                 + '_vdM_' + str(row['vdM_count']) + '_'
-                    #                                 + row['query_name'] + filename_end)
                     yield  pr.parsePDB(path + 'iFG_' + str(row['iFG_count'])
                                 + '_vdM_' + str(row['vdM_count']) + '_'
                                 + filename_end)
@@ -344,7 +340,6 @@ class Analyze:
         dist_vdms = self.get_distant_vdms(seq_distance)
         cont_vdms = self.get_vdms_contacting_comb_atoms(exclude_wc=exclude_wc, exclude=exclude)
         return pd.merge(dist_vdms, cont_vdms[['iFG_count', 'vdM_count']], on=['iFG_count', 'vdM_count'])
-        # return pd.merge(dist_vdms, cont_vdms, on=['iFG_count', 'vdM_count'])
 
     def get_sc_only_contacts(self, exclude_wc=True, exclude=None):
         return self.ifg_contact_vdm[self.ifg_contact_vdm.apply(self._get_sc_only_contacts,

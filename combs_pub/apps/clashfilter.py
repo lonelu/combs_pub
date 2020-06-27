@@ -893,7 +893,7 @@ class VdmReps:
         self.grouping = kwargs.get('grouping', ['iFG_count', 'vdM_count', 'query_name'])
         df['iFG_count'] = df['iFG_count'].astype('str')
         df['vdM_count'] = df['vdM_count'].astype('str')
-        df.set_index(self.grouping, inplace=True) #, drop=False)
+        df.set_index(self.grouping, inplace=True)
         self.df = df
         self.df_xy = None
         self.df_y = None
@@ -933,7 +933,7 @@ class VdmReps:
             self.df_pairwise = pickle.load(infile)
             self.df_pairwise['iFG_count'] = self.df_pairwise['iFG_count'].astype('str')
             self.df_pairwise['vdM_count'] = self.df_pairwise['vdM_count'].astype('str')
-            self.df_pairwise.set_index(self.grouping, inplace=True) #, drop=False)
+            self.df_pairwise.set_index(self.grouping, inplace=True)
 
     @staticmethod
     def _reshape(g):
@@ -1082,7 +1082,6 @@ class VdmReps:
 
     def _find_all_reps_cycle_dict(self, df, aa_, rmsd=0.2):
         self.set_dataframe_aa(df, aa_)
-        # self.get_df_pairwise()
         self.group_dataframe_aa()
         self.get_dataframe_coords()
         self.cluster_coords(rmsd)
@@ -1317,7 +1316,6 @@ class DataFrameVdm(RelCoords):
         it only selects the iFG atoms"""
 
         for vdm, sc_bb in zip(self.vdms, self.sc_bb_list):
-            # print(vdm, sc_bb)
             resname = vdm.select('chain X resnum 10 name CA').getResnames()[0]
             sel = vdm.select('chain Y resnum 10 name ' + ' '.join(self.ifg_atom_names))
             check_sel = vdm.select('chain X resnum 10 name '
@@ -1731,7 +1729,6 @@ class Clash:
                               h_alkyl=kwargs.get('r_h_alkyl', 1.22),
                               cl=kwargs.get('r_cl', 1.77),
                               na=kwargs.get('r_na', 0.95),
-                              # fe=kwargs.get('r_fe', 0.74),
                               fe=kwargs.get('r_fe', 0.6),
                               zn=kwargs.get('r_zn', 0.71))
 
